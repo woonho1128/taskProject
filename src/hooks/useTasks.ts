@@ -66,7 +66,7 @@ export function useTasks(userId: string | undefined) {
       task_type: input.task_type ?? null,
       due_date: input.due_date ?? null,
       due_time: input.due_time ?? null,
-      position: input.position ?? Date.now(),
+      position: input.position ?? Math.floor(Date.now() / 1000) % 2000000000,
       related_urls: input.related_urls ?? [],
       git_branch: input.git_branch ?? null,
       server_path: input.server_path ?? null,
